@@ -1,2 +1,2 @@
 #!/bin/bash
-echo "My test script"
+curl "wttr.in/$1"
