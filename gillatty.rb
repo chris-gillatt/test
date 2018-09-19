@@ -6,6 +6,6 @@ class Gillatty < Formula
   url "https://github.com/chris-gillatt/test/blob/master/gillatty.sh", :using => :curl
 
   def install
-    bin.install "chris-gillatt/test/gillatty.sh"
+    bin.install "chris-gillatt/gillatty"
   end
 end
