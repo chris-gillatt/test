@@ -11,6 +11,8 @@ GIT_REVISION=$(git rev-parse HEAD)
 
 BRANCH="master"
 
+echo "GITHUB RUN ID: $GITHUB_RUN_ID"
+
 # Compress new version and place in tars archive
 mkdir tars
 tar cvf tars/"${APP}-0.0.${RELEASE_COUNT}.tar.gz" "$APP"
