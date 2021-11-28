@@ -1,15 +1,13 @@
-class Gillatty < Formula
-  desc "test bollocks"
-  homepage "https://github.com/chris-gillatt"
-  url "https://github.com/chris-gillatt/test/raw/master/archive/gillatty-0.0.1.tar.gz"
-  sha256 "a4b69610942aa4f3e2356342eaa9406ff90aec5399734a184865578f4dd8c9c2"
-  version "0.0.1"
+class Dockerfix < Formula
+  desc "Convenient housekeeping for docker Mac users"
+  homepage "https://github.com/chris-gillatt/homebrew-dockerfix"
+  url "https://github.com/chris-gillatt/homebrew-dockerfix/releases/download/0.0.18/dockerfix-0.0.18.tar.gz"
+  sha256 ""
+  version "0.0.18"
 
   depends_on "curl"
 
-  bottle :unneeded
-
   def install
-    bin.install "gillatty"
+    bin.install "dockerfix"
   end
 end
