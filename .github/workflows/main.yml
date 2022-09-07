@@ -31,7 +31,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          file: "gillaty*"
+          file: "gillatty*"
 #          delete_file: "random-name-*.txt"
           tags: true
 #          draft: true
