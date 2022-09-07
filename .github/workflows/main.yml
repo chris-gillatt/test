@@ -24,24 +24,16 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
-      - name: Tar files
-        run: tar -czvf my_files.tar.gz gillatty*
-      # Runs a set of commands using the runners shell
- #     - name: Run a multi-line script
- #       env:
- #           ORG: ${{ secrets.ORG }}
- #           USER: ${{ secrets.USER }}
- #           USER_EMAIL: ${{ secrets.USER_EMAIL }}
- #           USER_PASSWORD: ${{ secrets.USER_PASSWORD }}
- #       run: |
- #         ./package.sh
- #         echo "Done."
-
-      - name: Upload a Build Artifact
-        uses: actions/upload-artifact@v3.1.0
+      - name: "env"
+        run: |
+          echo "$PWD"
+      - uses: xresloader/upload-to-github-release@main
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          name: gillatty
-          # A file, directory or wildcard pattern that describes what to upload
-          path: ./my_files.tar.gz
-
-          if-no-files-found: error
+          file: "gillaty"
+#          delete_file: "random-name-*.txt"
+          tags: false
+#          draft: true
+          branches: "master"
+          verbose: true
