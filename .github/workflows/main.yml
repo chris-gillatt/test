@@ -26,12 +26,23 @@ jobs:
       - uses: actions/checkout@v2
 
       # Runs a set of commands using the runners shell
-      - name: Run a multi-line script
-        env:
-            ORG: ${{ secrets.ORG }}
-            USER: ${{ secrets.USER }}
-            USER_EMAIL: ${{ secrets.USER_EMAIL }}
-            USER_PASSWORD: ${{ secrets.USER_PASSWORD }}
-        run: |
-          ./package.sh
-          echo "Done."
+ #     - name: Run a multi-line script
+ #       env:
+ #           ORG: ${{ secrets.ORG }}
+ #           USER: ${{ secrets.USER }}
+ #           USER_EMAIL: ${{ secrets.USER_EMAIL }}
+ #           USER_PASSWORD: ${{ secrets.USER_PASSWORD }}
+ #       run: |
+ #         ./package.sh
+ #         echo "Done."
+
+      - name: Upload a Build Artifact
+        uses: actions/upload-artifact@v3.1.0
+        with:
+          name: gillatty
+          # A file, directory or wildcard pattern that describes what to upload
+          path: ./
+
+          if-no-files-found: error
+          # Duration after which artifact will expire in days. 0 means using default retention.
+      Minimum 1 day. Maximum 90 days unless changed from the repository settings page.
